@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+:root {
+    --blue-dark: #0f3d7a;
+    --blue-mid: #2462b8;
+    --blue-light: #4a88e0;
+    --gold-accent: #f5b82e;
+    --pale-blue: #eaf3ff;
+    --dark: #222;
+    --white: #ffffff;
+}
+
+body {
+    background: linear-gradient(135deg, #f4f8fc, #e9f1fb);
+    color: var(--dark);
+    line-height: 1.8;
+}
+
+/* Header Gradient Nav */
+.navbar {
+    background: linear-gradient(90deg, var(--blue-dark), var(--blue-mid));
+    box-shadow: 0 4px 12px rgba(15, 61, 122, 0.25);
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-menu > li > a {
+    display: block;
+    color: var(--white);
+    text-decoration: none;
+    padding: 1.4rem 2rem;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.nav-menu > li > a:hover,
+.nav-menu > li > a.active {
+    background: rgba(255, 255, 255, 0.12);
+    border-bottom: 3px solid var(--gold-accent);
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white);
+    min-width: 260px;
+    list-style: none;
+    box-shadow: 0 6px 15px rgba(15, 61, 122, 0.18);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    color: var(--blue-dark);
+    text-decoration: none;
+    display: block;
+    padding: 0.9rem 1.1rem;
+    transition: background 0.25s ease;
+}
+
+.dropdown-menu a:hover {
+    background: var(--pale-blue);
+    padding-left: 1.4rem;
+}
+
+/* Main Container Card */
+.home-container,
+.lesson-container {
+    max-width: 1120px;
+    margin: 2.8rem auto;
+    padding: 2.8rem;
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(15, 61, 122, 0.09);
+    border-left: 5px solid var(--gold-accent);
+}
+
+h1, h2, h3 {
+    color: var(--blue-dark);
+    margin-bottom: 1.1rem;
+}
+
+h1 {
+    font-size: 1.9rem;
+}
+
+p, ul, ol {
+    margin-bottom: 1.3rem;
+}
+
+ul, ol {
+    padding-left: 2rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--blue-mid), var(--blue-light));
+    color: var(--white);
+    padding: 0.95rem 1.7rem;
+    border-radius: 10px;
+    text-decoration: none;
+    margin: 0.6rem 0;
+    transition: transform 0.25s ease;
+    box-shadow: 0 3px 8px rgba(36, 98, 184, 0.22);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    display: inline-block;
+    background: #e0e5ec;
+    color: var(--dark);
+    padding: 0.95rem 1.7rem;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-right: 0.7rem;
+}
+
+.btn-secondary:hover {
+    background: #d0d7e2;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.9rem 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 0.95rem;
+    text-align: left;
+}
+
+th {
+    background: var(--pale-blue);
+}
+
+footer {
+    background: linear-gradient(90deg, var(--blue-dark), var(--blue-mid));
+    color: var(--white);
+    text-align: center;
+    padding: 1.3rem;
+    margin-top: 2rem;
+}
+
+/* Mobile Responsive */
+@media (max-width:768px) {
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+    .dropdown-menu {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .home-container,
+    .lesson-container {
+        margin: 1rem;
+        padding: 1.6rem;
+    }
+}
